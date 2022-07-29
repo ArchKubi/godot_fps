@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://font_/MusticaPro-SemiBold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://theme/panel_background3.tres" type="StyleBox" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.176471, 0.00392157, 0.286275, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.235294, 0.0352941, 0.423529, 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 33
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 43
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[node name="Terminal_Popup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 56.0
+margin_top = 69.0
+margin_right = -63.0
+margin_bottom = -68.0
+rect_min_size = Vector2( 208, 216 )
+
+[node name="MainWindow" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 216, 216 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="tittleBar" type="Panel" parent="MainWindow"]
+anchor_right = 1.0
+margin_bottom = 33.443
+rect_min_size = Vector2( 200, 33.443 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/panel = SubResource( 2 )
+
+[node name="Tittle" type="Label" parent="MainWindow/tittleBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -5.0
+margin_bottom = 4.557
+rect_min_size = Vector2( 176, 32 )
+custom_fonts/font = SubResource( 10 )
+text = "GnuChan Defaul  Beta 000000.1"
+align = 1
+valign = 1
+
+[node name="close" type="Button" parent="MainWindow/tittleBar"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -33.0
+margin_top = -13.0
+margin_right = -6.0
+margin_bottom = 8.557
+rect_min_size = Vector2( 22.664, 33.255 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+text = "X"
+
+[node name="bottomBar" type="Panel" parent="MainWindow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 43.0
+margin_right = -9.0
+margin_bottom = -8.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/panel = ExtResource( 2 )

@@ -1,0 +1,275 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://theme/focus.tres" type="StyleBox" id=1]
+[ext_resource path="res://font_/MusticaPro-SemiBold.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://theme/disable.tres" type="StyleBox" id=3]
+[ext_resource path="res://theme/pressed.tres" type="StyleBox" id=4]
+[ext_resource path="res://theme/hover.tres" type="StyleBox" id=5]
+[ext_resource path="res://theme/normal.tres" type="StyleBox" id=6]
+[ext_resource path="res://theme/panel_background1.tres" type="StyleBox" id=7]
+[ext_resource path="res://theme/titleBackground.tres" type="StyleBox" id=8]
+[ext_resource path="res://script/textEditor.gd" type="Script" id=9]
+[ext_resource path="res://theme/syst_theme.tres" type="Theme" id=10]
+[ext_resource path="res://script/editorText_not_scene.gd" type="Script" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.176471, 0.00392157, 0.286275, 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 33
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 43
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="DynamicFont" id=3]
+size = 17
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 46
+font_data = ExtResource( 2 )
+
+[node name="TextEditor_Popup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 55.0
+margin_top = 69.0
+margin_right = -63.0
+margin_bottom = -80.0
+rect_min_size = Vector2( 208, 216 )
+script = ExtResource( 9 )
+
+[node name="MainWindow" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = -5.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 216, 216 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="tittleBar" type="Panel" parent="MainWindow"]
+anchor_right = 1.0
+margin_bottom = 33.443
+rect_min_size = Vector2( 200, 33.443 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/panel = ExtResource( 8 )
+
+[node name="Tittle" type="Label" parent="MainWindow/tittleBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -5.0
+margin_bottom = 4.557
+rect_min_size = Vector2( 176, 32 )
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "GnuChan Text Editor Beta 000000.1"
+align = 1
+valign = 1
+
+[node name="close" type="Button" parent="MainWindow/tittleBar"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -33.0
+margin_top = -13.0
+margin_right = -6.0
+margin_bottom = 8.557
+rect_min_size = Vector2( 22.664, 33.255 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 12 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+text = "X"
+
+[node name="bottomBar" type="Panel" parent="MainWindow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 139.0
+margin_right = -9.0
+margin_bottom = -13.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/panel = SubResource( 10 )
+
+[node name="TextEdit" type="TextEdit" parent="MainWindow/bottomBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 1.0
+theme = ExtResource( 10 )
+custom_colors/member_variable_color = Color( 0.788235, 0, 0.482353, 1 )
+custom_colors/symbol_color = Color( 1, 0, 0.913725, 1 )
+custom_colors/bookmark_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0.0941176, 0.0156863, 0.164706, 1 )
+custom_colors/caret_color = Color( 0.639216, 0, 1, 1 )
+custom_colors/font_color_selected = Color( 0.556863, 0, 1, 1 )
+custom_colors/font_color = Color( 0.85098, 0, 1, 1 )
+custom_colors/line_number_color = Color( 0.803922, 0, 1, 1 )
+custom_colors/current_line_color = Color( 0.266667, 0.0352941, 0.482353, 1 )
+custom_colors/mark_color = Color( 0.587891, 0, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = ExtResource( 6 )
+text = "print(\" Hello F.. World  \")"
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+bookmark_gutter = true
+breakpoint_gutter = true
+fold_gutter = true
+highlight_all_occurrences = true
+override_selected_font_color = true
+smooth_scrolling = true
+minimap_draw = true
+minimap_width = 100
+caret_blink = true
+script = ExtResource( 11 )
+
+[node name="menu" type="Panel" parent="MainWindow"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 8.0
+margin_top = -322.5
+margin_right = 1153.0
+margin_bottom = -250.5
+custom_styles/panel = ExtResource( 7 )
+
+[node name="newfile" type="Button" parent="MainWindow/menu"]
+margin_left = 14.0
+margin_right = 219.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 205, 0 )
+custom_colors/font_color_disabled = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_focus = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_hover = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_pressed = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 6 )
+text = "New File"
+
+[node name="openFile" type="Button" parent="MainWindow/menu"]
+margin_left = 237.0
+margin_right = 442.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 205, 0 )
+custom_colors/font_color_disabled = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_focus = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_hover = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_pressed = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 6 )
+text = "Open File"
+
+[node name="savefile" type="Button" parent="MainWindow/menu"]
+visible = false
+margin_left = 460.0
+margin_right = 665.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 205, 0 )
+custom_colors/font_color_disabled = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_focus = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_hover = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_pressed = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 6 )
+text = "Save File"
+
+[node name="saveas" type="Button" parent="MainWindow/menu"]
+margin_left = 683.0
+margin_right = 944.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 205, 0 )
+custom_colors/font_color_disabled = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_focus = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_hover = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_colors/font_color_pressed = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 6 )
+text = "Save As File"
+
+[node name="fileManager" type="Control" parent="."]
+margin_left = 1001.0
+margin_top = 19.0
+margin_right = 1097.0
+margin_bottom = 107.0
+
+[node name="OpenFile" type="FileDialog" parent="fileManager"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -193.38
+margin_bottom = -210.0
+rect_min_size = Vector2( 150, 52.5 )
+theme = ExtResource( 10 )
+window_title = "Open a File"
+mode = 0
+access = 2
+current_dir = "/home"
+current_file = "home"
+current_path = "/home/home"
+
+[node name="saveAsFile" type="FileDialog" parent="fileManager"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -193.38
+margin_bottom = -210.0
+rect_min_size = Vector2( 150, 52.5 )
+theme = ExtResource( 10 )
+access = 2
+current_dir = "/home"
+current_file = "/home"
+current_path = "/home/home"
+
+[connection signal="pressed" from="MainWindow/tittleBar/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="MainWindow/menu/newfile" to="." method="_on_newfile_pressed"]
+[connection signal="pressed" from="MainWindow/menu/openFile" to="." method="_on_openFile_pressed"]
+[connection signal="pressed" from="MainWindow/menu/savefile" to="." method="_on_savefile_pressed"]
+[connection signal="pressed" from="MainWindow/menu/saveas" to="." method="_on_saveas_pressed"]
+[connection signal="file_selected" from="fileManager/OpenFile" to="." method="_on_OpenFile_file_selected"]
+[connection signal="file_selected" from="fileManager/saveAsFile" to="." method="_on_saveAsFile_file_selected"]
