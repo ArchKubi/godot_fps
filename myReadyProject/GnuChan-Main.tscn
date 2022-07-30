@@ -1,0 +1,407 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://img_/StaticDisplay.png" type="Texture" id=1]
+[ext_resource path="res://software/textEditor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/GnuChan-Main.gd" type="Script" id=3]
+[ext_resource path="res://software/terminal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://software/runner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://font_/MusticaPro-SemiBold.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://software/timer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://img_/wallpaper.png" type="Texture" id=8]
+[ext_resource path="res://software/calculator.tscn" type="PackedScene" id=9]
+[ext_resource path="res://script/sound.gd" type="Script" id=10]
+[ext_resource path="res://theme/syst_theme.tres" type="Theme" id=11]
+[ext_resource path="res://software/musicPlayer.tscn" type="PackedScene" id=12]
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 1280, 1012 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 1280, 1012 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.145098, 0, 0.298039, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.235294, 0.0352941, 0.423529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.141176, 0, 0.27451, 1 )
+
+[sub_resource type="DynamicFont" id=73]
+size = 23
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxEmpty" id=68]
+
+[sub_resource type="StyleBoxEmpty" id=69]
+
+[sub_resource type="StyleBoxEmpty" id=70]
+
+[sub_resource type="StyleBoxEmpty" id=71]
+
+[sub_resource type="StyleBoxEmpty" id=72]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.235294, 0.0352941, 0.423529, 1 )
+
+[sub_resource type="DynamicFont" id=74]
+size = 19
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=78]
+size = 15
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=80]
+bg_color = Color( 0.254902, 0.0156863, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=76]
+bg_color = Color( 0.203922, 0.0235294, 0.372549, 1 )
+
+[sub_resource type="DynamicFont" id=77]
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=79]
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.141176, 0, 0.27451, 1 )
+
+[node name="GnuChan-Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="background_image" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticDisplay" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="middle" type="Control" parent="."]
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 195.0
+margin_right = 308.0
+margin_bottom = -298.0
+
+[node name="Software Shortcut" type="RichTextLabel" parent="middle"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -27.0
+margin_right = 4.0
+margin_bottom = -10.0
+custom_colors/default_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "--------------------------------------
+						Software List
+--------------------------------------
+			Alt + R = Runner
+				terminal
+				editor = text Editor
+				calculator
+				timer
+				music player
+			alt = Enter = terminal
+
+
+
+
+
+
+
+
+
+----------------------------------------"
+
+[node name="SoftwareList" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextEditor_Popup" parent="SoftwareList" instance=ExtResource( 2 )]
+visible = false
+margin_left = 56.0
+margin_top = 64.0
+margin_right = -62.0
+margin_bottom = -85.0
+
+[node name="Timer_Popup" parent="SoftwareList" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Calculator" parent="SoftwareList" instance=ExtResource( 9 )]
+visible = false
+
+[node name="Terminal_Popup" parent="SoftwareList" instance=ExtResource( 4 )]
+visible = false
+
+[node name="musicPlayer" parent="SoftwareList" instance=ExtResource( 12 )]
+visible = false
+
+[node name="runner" parent="SoftwareList" instance=ExtResource( 5 )]
+visible = false
+
+[node name="TopBAR" type="Control" parent="."]
+margin_left = 55.0
+margin_top = 9.0
+margin_right = 1225.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 1169.93, 31 )
+
+[node name="leftTOP" type="Panel" parent="TopBAR"]
+margin_right = 236.0
+margin_bottom = 31.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="centerTOP" type="Panel" parent="TopBAR"]
+margin_left = 480.0
+margin_top = 1.0
+margin_right = 690.0
+margin_bottom = 31.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="EasterEgg" type="Button" parent="TopBAR/centerTOP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_bottom = -4.0
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 73 )
+custom_styles/hover = SubResource( 68 )
+custom_styles/pressed = SubResource( 69 )
+custom_styles/focus = SubResource( 70 )
+custom_styles/disabled = SubResource( 71 )
+custom_styles/normal = SubResource( 72 )
+text = "Gnu\\Linux is Life"
+
+[node name="rightTOP" type="Panel" parent="TopBAR"]
+margin_left = 886.0
+margin_top = 1.0
+margin_right = 1170.0
+margin_bottom = 31.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="VB" type="HBoxContainer" parent="TopBAR/rightTOP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_right = -9.0
+
+[node name="sep4" type="Label" parent="TopBAR/rightTOP/VB"]
+margin_top = 3.0
+margin_right = 5.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 74 )
+text = "|"
+align = 1
+valign = 1
+
+[node name="sound" type="Button" parent="TopBAR/rightTOP/VB"]
+margin_left = 9.0
+margin_right = 67.42
+margin_bottom = 32.0
+rect_min_size = Vector2( 58.42, 32 )
+theme = ExtResource( 11 )
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 78 )
+text = "Volume"
+
+[node name="sep3" type="Label" parent="TopBAR/rightTOP/VB"]
+margin_left = 71.0
+margin_top = 3.0
+margin_right = 76.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 74 )
+text = "|"
+align = 1
+valign = 1
+
+[node name="date" type="Label" parent="TopBAR/rightTOP/VB"]
+margin_left = 80.0
+margin_top = 3.0
+margin_right = 124.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 74 )
+text = "Date"
+align = 1
+valign = 1
+
+[node name="sep" type="Label" parent="TopBAR/rightTOP/VB"]
+margin_left = 128.0
+margin_top = 3.0
+margin_right = 133.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 74 )
+text = "|"
+align = 1
+valign = 1
+
+[node name="time" type="Label" parent="TopBAR/rightTOP/VB"]
+margin_left = 137.0
+margin_top = 3.0
+margin_right = 182.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 74 )
+text = "Time"
+align = 1
+valign = 1
+
+[node name="sep2" type="Label" parent="TopBAR/rightTOP/VB"]
+margin_left = 186.0
+margin_top = 3.0
+margin_right = 191.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 74 )
+text = "|"
+align = 1
+valign = 1
+
+[node name="Sound" type="Control" parent="TopBAR/rightTOP"]
+visible = false
+margin_left = 8.0
+margin_top = 37.0
+margin_right = 280.0
+margin_bottom = 69.0
+script = ExtResource( 10 )
+
+[node name="Panel2" type="Panel" parent="TopBAR/rightTOP/Sound"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -12.0
+margin_right = -208.0
+margin_bottom = -26.0
+custom_styles/panel = SubResource( 80 )
+
+[node name="Panel" type="Panel" parent="TopBAR/rightTOP/Sound"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_right = 51.0
+margin_bottom = 81.0
+custom_styles/panel = SubResource( 76 )
+
+[node name="mainSound" type="HSlider" parent="TopBAR/rightTOP/Sound"]
+margin_left = 139.0
+margin_top = 9.0
+margin_right = 315.0
+margin_bottom = 25.0
+theme = ExtResource( 11 )
+min_value = -30.0
+max_value = 0.0
+
+[node name="MainSound" type="Label" parent="TopBAR/rightTOP/Sound/mainSound"]
+margin_left = -128.0
+margin_top = -8.0
+margin_right = -8.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 77 )
+text = "Main Sound"
+align = 1
+valign = 1
+
+[node name="effectSound" type="HSlider" parent="TopBAR/rightTOP/Sound"]
+margin_left = 139.0
+margin_top = 49.0
+margin_right = 315.0
+margin_bottom = 65.0
+theme = ExtResource( 11 )
+min_value = -30.0
+max_value = 0.0
+
+[node name="MainSound" type="Label" parent="TopBAR/rightTOP/Sound/effectSound"]
+margin_left = -128.0
+margin_top = -8.0
+margin_right = -8.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 77 )
+text = "Effect Volume:"
+align = 1
+valign = 1
+
+[node name="musicSound" type="HSlider" parent="TopBAR/rightTOP/Sound"]
+margin_left = 139.0
+margin_top = 89.0
+margin_right = 315.0
+margin_bottom = 105.0
+theme = ExtResource( 11 )
+min_value = -30.0
+max_value = 0.0
+
+[node name="MainSound" type="Label" parent="TopBAR/rightTOP/Sound/musicSound"]
+margin_left = -128.0
+margin_top = -8.0
+margin_right = -8.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 77 )
+text = "Music Volume:"
+align = 1
+valign = 1
+
+[node name="closeVolume" type="Button" parent="TopBAR/rightTOP/Sound"]
+margin_left = 3.0
+margin_top = 121.0
+margin_right = 59.0
+margin_bottom = 145.0
+theme = ExtResource( 11 )
+custom_colors/font_color = Color( 0.615686, 0.305882, 0.866667, 1 )
+custom_fonts/font = SubResource( 79 )
+text = "Close"
+
+[node name="BottomBAR" type="Control" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 29.0
+margin_top = -40.0
+margin_right = 1251.0
+margin_bottom = -9.0
+rect_min_size = Vector2( 1169.93, 31 )
+
+[node name="centerBOTTOM" type="Panel" parent="BottomBAR"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 382.0
+margin_top = 5.0
+margin_right = -383.0
+custom_styles/panel = SubResource( 8 )
+
+[connection signal="pressed" from="TopBAR/rightTOP/VB/sound" to="." method="_on_sound_pressed"]
+[connection signal="value_changed" from="TopBAR/rightTOP/Sound/mainSound" to="TopBAR/rightTOP/Sound" method="_on_SoundGV_value_changed"]
+[connection signal="value_changed" from="TopBAR/rightTOP/Sound/effectSound" to="TopBAR/rightTOP/Sound" method="_on_effectSound_value_changed"]
+[connection signal="value_changed" from="TopBAR/rightTOP/Sound/musicSound" to="TopBAR/rightTOP/Sound" method="_on_musicSound_value_changed"]
+[connection signal="pressed" from="TopBAR/rightTOP/Sound/closeVolume" to="." method="_on_closeVolume_pressed"]
