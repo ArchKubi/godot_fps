@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://font_/MusticaPro-SemiBold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://theme/panel_background3.tres" type="StyleBox" id=2]
@@ -52,9 +52,6 @@ bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=23]
 size = 20
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=24]
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=25]
@@ -213,35 +210,12 @@ margin_right = 424.0
 margin_bottom = 568.0
 
 [node name="GridContainer" type="GridContainer" parent="MainWindow/bottomBar/leftPanel/Panel2/playerList"]
-margin_right = 321.0
+margin_right = 216.0
 margin_bottom = 51.0
 columns = 2
 
-[node name="music1" type="VBoxContainer" parent="MainWindow/bottomBar/leftPanel/Panel2/playerList/GridContainer"]
-margin_right = 101.0
-margin_bottom = 51.0
-
-[node name="music1" type="Label" parent="MainWindow/bottomBar/leftPanel/Panel2/playerList/GridContainer/music1"]
-margin_right = 101.0
-margin_bottom = 26.0
-custom_fonts/font = SubResource( 23 )
-text = "90'S  Music"
-
-[node name="playmusic1" type="Button" parent="MainWindow/bottomBar/leftPanel/Panel2/playerList/GridContainer/music1"]
-margin_top = 30.0
-margin_right = 101.0
-margin_bottom = 51.0
-custom_fonts/font = SubResource( 24 )
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/focus = ExtResource( 3 )
-custom_styles/disabled = ExtResource( 5 )
-custom_styles/normal = ExtResource( 6 )
-text = "Play"
-
 [node name="music2" type="VBoxContainer" parent="MainWindow/bottomBar/leftPanel/Panel2/playerList/GridContainer"]
-margin_left = 105.0
-margin_right = 321.0
+margin_right = 216.0
 margin_bottom = 51.0
 
 [node name="music1" type="Label" parent="MainWindow/bottomBar/leftPanel/Panel2/playerList/GridContainer/music2"]
@@ -268,5 +242,4 @@ text = "Play"
 [connection signal="pressed" from="MainWindow/bottomBar/leftPanel/Panel/LoopMusic" to="." method="_on_LoopMusic_pressed"]
 [connection signal="pressed" from="MainWindow/bottomBar/leftPanel/Panel/stop" to="." method="_on_stop_pressed"]
 [connection signal="pressed" from="MainWindow/bottomBar/leftPanel/Panel/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MainWindow/bottomBar/leftPanel/Panel2/playerList/GridContainer/music1/playmusic1" to="." method="_on_playmusic1_pressed"]
 [connection signal="pressed" from="MainWindow/bottomBar/leftPanel/Panel2/playerList/GridContainer/music2/testMusic" to="." method="_on_testMusic_pressed"]

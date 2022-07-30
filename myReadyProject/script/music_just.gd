@@ -8,7 +8,7 @@ var normalMusic = false
 onready var music = get_node("playMusic")
 
 func _ready():
-	music.stream = load("res://music/defaultMusic.mp3")
+	music.stream = load("res://music/test.mp3")
 	music.play()
 
 
